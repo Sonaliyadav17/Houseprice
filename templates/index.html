@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>House Price Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>House Price Prediction</h1>
+        <form method="POST" action="/predict">
+            <label for="LotArea">Lot Area (sq ft):</label>
+            <input type="text" name="LotArea" required><br>
+
+            <label for="YearBuilt">Year Built:</label>
+            <input type="text" name="YearBuilt" required><br>
+
+            <label for="1stFlrSF">1st Floor Area (sq ft):</label>
+            <input type="text" name="1stFlrSF" required><br>
+
+            <label for="2ndFlrSF">2nd Floor Area (sq ft):</label>
+            <input type="text" name="2ndFlrSF" required><br>
+
+            <label for="FullBath">Full Bathrooms:</label>
+            <input type="text" name="FullBath" required><br>
+
+            <label for="BedroomAbvGr">Bedrooms Above Ground:</label>
+            <input type="text" name="BedroomAbvGr" required><br>
+
+            <label for="TotRmsAbvGrd">Total Rooms Above Ground:</label>
+            <input type="text" name="TotRmsAbvGrd" required><br>
+
+            <label for="GarageCars">Garage Cars:</label>
+            <input type="text" name="GarageCars" required><br>
+
+            <label for="OverallQual">Overall Quality (1-10):</label>
+            <input type="text" name="OverallQual" required><br>
+
+            <label for="OverallCond">Overall Condition (1-10):</label>
+            <input type="text" name="OverallCond" required><br>
+
+            <label for="Neighborhood">Neighborhood:</label>
+            <input type="text" name="Neighborhood" required><br>
+
+            <label for="ExterQual">Exterior Quality:</label>
+            <input type="text" name="ExterQual" required><br>
+
+            <label for="KitchenQual">Kitchen Quality:</label>
+            <input type="text" name="KitchenQual" required><br>
+
+            <label for="GrLivArea">Ground Living Area (sq ft):</label>
+            <input type="text" name="GrLivArea" required><br>
+
+            <button type="submit">Predict Price</button>
+        </form>
+
+        {% if prediction %}
+        <h2>{{ prediction }}</h2>
+        {% endif %}
+    </div>
+</body>
+</html>
